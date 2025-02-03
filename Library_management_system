@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+struct Book{
+    int id;
+    std::string title;
+    std::string author;
+    bool isAvailable;
+}
+
+
+void addBook(std::vector<Book>& library){
+    Book newBook;
+    std::cout << "Enter book ID: ";
+    std::cin >> newBook.id;
+    std::coin.ignore();
+    std::cout << "Enter book title: ";
+    std::getline(std::cin ,newBook.title);
+    std::cout << "Enter book author: ";
+    std::getline(std::cin ,newBook.author);
+    newBook.isAvailable = true;
+    library.push_back(newBook);
+    std::cout << "Book successfully added! \n";
+
+}
+
+void deleteBook(std::vector<Book>& library){
+    int id;
+    std::cout << "Enter book ID to delete: ";
+    std::cin >> id;
+
+    for (auto i=library.begin(); i != library.end(); i++){
+        if (i->id == id){
+            library.erase(i);
+            std::cout << "Book deleted Successfully! \n";
+            return;
+        }
+    }
+    std::cout << "Book not found! \n";
+}
